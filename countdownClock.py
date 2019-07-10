@@ -30,7 +30,10 @@ def get_user_input(string):
 while True:
     while True:
         year = get_user_input("year")
-        break
+        if len(str(year)) is not 4:
+            print("Year must be four digits")
+        else:
+            break
 
     while True:
         month = get_user_input("month")
@@ -43,7 +46,7 @@ while True:
         day = get_user_input("day")
         if month == 2 and (day > 28 or day < 1):
             print("Day must be between 1 and 28")
-        elif month == 4 or month == 6 or month == 9 or month == 11 and (day > 30 or day < 1):
+        elif (month == 4 or month == 6 or month == 9 or month == 11) and (day > 30 or day < 1):
             print("Day must be between 1 and 30")
         elif day > 31 or day < 1:
             print("Day must be between 1 and 31")
