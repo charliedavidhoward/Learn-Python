@@ -82,27 +82,34 @@ game_score = 100
 
 for i in range(1, 6):
     round_deck = deck.copy()
+    
     print("Round {} of 5!".format(i))
     print("")
     time.sleep(1)
     print("Your game score is {}".format(game_score))
     print("")
+    
     first_card = draw_card()
     second_card = draw_card()
+    
     time.sleep(1)
     print("Your first card is a {}".format(first_card[0]))
+    
     time.sleep(1)
     print('Your second card is a {}'.format(second_card[0]))
+    
     total = first_card[1] + second_card[1]
     time.sleep(1)
     print("")
     print("Your total is {}".format(total))
+    
     while True:
         time.sleep(1)
         print("")
         print("Stick or twist?")
         choice = input(">> ")
         print("")
+        
         if choice.lower() == "stick":
             game_score = game_score - (21 - total)
             print("")
@@ -112,6 +119,7 @@ for i in range(1, 6):
             time.sleep(1)
             print("You have received a {}".format(card[0]))
             time.sleep(1)
+            
             total = total + card[1]
             if total > 21:
                 print("Bust!  Your total is {}!".format(total))
